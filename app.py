@@ -17,7 +17,7 @@ def receber_webhook():
         st = str(dados.get('status', '')).upper()
         if st in ['PAID', 'COMPLETED', 'SETTLED', 'APPROVED', 'APROVADO', 'CONCLUIDO', 'PAGO', 'RECEBIDO', 'SUCCESS']:
             tid = dados.get('transactionId')
-            # Salva o ID da transação na memória para o bot pegar depois
+            # Salva o ID da transacao na memoria para o bot pegar depois
             if tid not in [p.get('transactionId') for p in pagamentos_pagos]:
                 pagamentos_pagos.append(dados)
                 
